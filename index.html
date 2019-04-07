@@ -1,204 +1,284 @@
 <!DOCTYPE html>
 <html>
-<title>Graphics By Garza</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<title>~Bar Name here~</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+</head>
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.slider-frame{
-            overflow: hidden;
-            height:800px;
-            width: 1200px;
-            margin-left: 200px;
-            margin-top: 20px;
-        }
-/*-------SLIDE ANIMATION-------*/
-        @-webkit-keyframes slide_animation{
-            0% {left:0px;}
-            10% {left:0px;}
-            20% {left:1200px;}
-            30% {left:1200px;}
-            40% {left:2400px;}
-            50% {left:2400px;}
-            60% {left:1200px;}
-            70% {left:1200px;}
-            80% {left:0px;}
-            90% {left:0px;}
-            100% {left:0px;}
-        }
-        .slide-images{
-            width: 3600px;
-            height: 800px;
-            margin: 0 0 0 -2400px;
-            position: relative;
-            -webkit-animation-name: slide_animation;
-            -webkit-animation-duration: 33s;
-            -webkit-animation-iteration-count: infinite;
-            -webkit-animation-direction: alternate;
-            -webkit-animation-play-state: running;
-        }
-        .img-container{
-            height: 800px;
-            width: 1200px;
-            position: relative;
-            float: left;
-        }
-    @font-face{
-        font-family: "horizon";
-        src:url("Horizon-Outlinetwo.otf")
+    body {
+        background: rgba(0, 0, 0, 0.9);
+        margin: 0;
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    h1{font-family:horizon;}
+
+    .nav {}
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: orangered;
+        color: black;
+        border-radius: 5px;
+    }
+
+    .showcase::after {
+        content: '';
+        height: 100vh;
+        width: 100%;
+        background-image: url(band.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        transition: all 1000ms;
+    }
+
+
+    .showcase:hover::after {
+        filter: blur(0px);
+        -webkit-filter: blur(0px);
+    }
+
+    .showcase:hover .content {
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+
+    .content {
+        position: absolute;
+        font-family: 'Merienda', cursive;
+        border: 5px solid white;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        z-index: 1;
+        top: 10%;
+        left: 50%;
+        margin-top: 105px;
+        margin-left: -145px;
+        width: 300px;
+        height: 350px;
+        text-align: center;
+        transition: all 1000ms;
+    }
+
+    .content .logo {
+        height: 180px;
+        width: 180px;
+    }
+
+    .content .title {
+        font-size: 2.2rem;
+        margin-top: 1rem;
+        text-shadow: 2px 4px 4px #000000;
+    }
+
+    .content .text {
+        line-height: 1.7;
+        margin-top: 1rem;
+        text-shadow: 2px 4px 4px #000000;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: auto;
+        overflow: hidden;
+        padding: 4rem 1rem;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .center {
+        text-align: center;
+        margin: auto;
+    }
+
+    .bg-light {
+        background: orangered;
+        color: #333;
+    }
+
+    .bg-dark {
+        background: #333;
+        color: orangered;
+    }
+
+    footer {
+        padding: 2.2rem;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    /* Small Screens */
+    @media (max-width: 560px) {
+        .showcase::after {
+            height: 50vh;
+        }
+
+        .content {
+            top: 5%;
+            margin-top: 5px;
+        }
+
+        .content .logo {
+            height: 140px;
+            width: 140px;
+        }
+
+        .content .text {
+            display: none;
+        }
+
+        .grid-3,
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+
+        .services div {
+            border-bottom: #333 dashed 1px;
+            padding: 1.2rem 1rem;
+        }
+    }
+
+    /* Landscape */
+    @media (max-height: 500px) {
+
+        .content .title,
+        .content .text {
+            display: none;
+        }
+
+        .content {
+            top: 0;
+        }
+    }
+
+    .vending {
+        text-align: center;
+    }
+
 </style>
-<body class="w3-light-grey">
 
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
-
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b style="font-size:64px;">GARZA GRAPHICS</b></h1>
-  <h5>Welcome to my Portfolio!</h5>
-</header>
-<hr>
- <h2 style="text-align: center; font-size: 22px; border: 2px;">Graphics by Shawn Garza (IG @garzasgraphics)</h2>
-    <div class="slider-frame">
-        <div class="slide-images">
-            <div class="img-container">
-                <img src="design7.jpg">
+<body>
+    <header class="showcase">
+        <ul class="nav">
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">Menu/Drinks</a></li>
+            <li><a href="contact.asp">Events</a></li>
+            <li><a href="about.asp">Contact</a></li>
+        </ul>
+        <div class="content">
+            <!--img src="" class="logo" alt="vending"-->
+            <div class="title" style="font-size: 50px;">
+                MERAKI RESTOBAR
             </div>
-            <div class="img-container">
-                
-                <img src="design9.jpg">
+            <div class="text" style="font-size: 20px;">
+                Coming Soon in Davao City!
             </div>
-            <div class="img-container">
-                <img src="design8.jpg">
+            <br>
+            <div class="subtext" style="font-size: 12px;">
+                Join us for nights you wont forget!
             </div>
         </div>
-    </div>
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>News/Events</b></h3>
-      <h5>Spots available for Commission work in February, book me now!<span class="w3-opacity">January 2, 2019</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+    </header>
+    <!---- Services ---->
+    <section class="services">
+        <div class="container grid-3 center">
+            <div>
+                <i class="fas fa-glass-cheers fa-3x"></i>
+                <h3>Drinks</h3>
+                <p>Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel.</p>
+            </div>
+            <div>
+                <i class="fas fa-guitar fa-3x"></i>
+                <h3>Performances</h3>
+                <p>Offering a platform for Live Bands and Solo Artists to showcase there skills, and be promoted through our Youtube channel.</p>
+            </div>
+            <div>
+                <i class="fas fa-utensils fa-3x"></i>
+                <h3>Food</h3>
+                <p>Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel.</p>
+            </div>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+    </section>
+    <!--- Social Media --->
+    <section class="about bg-dark">
+        <div class="container">
+            <div class="grid-2">
+                <div class="center">
+                    <i class="fas fa-globe fa-10x"></i>
+                </div>
+                <div>
+                    <h3>Services Available</h3>
+                    <p>Weekend Specials/Discounts, Karaoke, Billiards, Darts, Live Band Performances, Dancing, Full Food Menu (Authentic Pinoy), Beer, Liqour, Mani, Tropiks, and Hookah!</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>Looking for a responsive sleek website?</b></h3>
-      <h5>Use my discount code "GARZAGRAPHICS19" to get 20% off your website booked with CreativeCeejay! <span class="w3-opacity">January 2, 2019</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+    </section>
+    <!--- About --->
+    <section class="about bg-light">
+        <div class="container">
+            <div class="grid-2">
+                <div class="center">
+                    <i class="fas fa-users fa-10x"></i>
+                </div>
+                <div>
+                    <h3>About Us</h3>
+                    <p>Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel. Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel. Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel. Lorem impsum dolor sit amet consectuetur adipisicing elit. Vitae, vel.</p>
+                </div>
+            </div>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>About Me</b></h4>
-      <p>{ENTER TEXT HERE}</p>
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">USA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">South Korea</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Art/Design</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Videos</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-    </p>
-    </div>
-  </div>
-  
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Website created by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CreativeCeejay</a></p>
-</footer>
-
+    </section>
+    <!-- main>
+        <p>SEND E-MAIL</p>
+        <form class="contact-form" action="contactform.php" method="post">
+            <input type="text" name="name" placeholder="Full name">
+            <input type="text" name="mail" placeholder="Your e-mail">
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" name="submit">SEND MAIL</button>
+        </form>
+    </main -->
+    <footer class="center bg-dark">
+        <p>Created by CreativeCeejay &copy; 2019</p>
+    </footer>
 </body>
+
 </html>
